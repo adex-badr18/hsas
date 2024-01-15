@@ -74,7 +74,6 @@ const PatientView = () => {
     async function patientDelete(e) {
         e.preventDefault();
 
-        // const patientId = e.currentTarget.getAttribute('data-patient-id');
         const patientResponse = await deletePatient(patientId);
 
         if (patientResponse.unAuthorize) {
@@ -98,9 +97,7 @@ const PatientView = () => {
         });
 
         setTimeout(() => {
-            navigate('/admin/patients')
-            // return redirect('/admin/users');
-            // window.location.reload(true);
+            navigate('/admin/patients');
         }, 3000);
     }
 

@@ -21,8 +21,6 @@ export async function action({ request }) {
         password
     }
 
-    console.log(data);
-
     if (intent === 'create') {
         try {
             const user = await createUser(data);

@@ -80,8 +80,6 @@ const UserView = () => {
     async function userDelete(e) {
         e.preventDefault();
 
-        // const userId = e.currentTarget.getAttribute('data-user-id');
-
         const user = await deleteUser(userId);
 
         if (user.unAuthorize) {
@@ -106,7 +104,6 @@ const UserView = () => {
 
         setTimeout(() => {
             return redirect('/admin/users');
-            // window.location.reload(true);
         }, 3000);
     }
 

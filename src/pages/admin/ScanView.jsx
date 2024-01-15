@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { Link, useLoaderData, useNavigate, useLocation } from 'react-router-dom';
 import { MdOutlineEdit, MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import { IoEyeOutline } from "react-icons/io5";
-import { scans, patients } from '../../constants';
-import { EmptySearch } from '../../components/EmptySearch';
-import { IoSearch } from 'react-icons/io5';
 import { requireAuth } from '../../utils';
 import { getScan, deleteScan } from '../../api';
 import ConfirmModal from '../../components/ConfirmModal';
@@ -67,9 +62,7 @@ const ScanView = () => {
         });
 
         setTimeout(() => {
-            navigate('/admin/scans')
-            // return redirect('/admin/users');
-            // window.location.reload(true);
+            navigate('/admin/scans');
         }, 3000);
     }
 

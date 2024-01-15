@@ -72,7 +72,6 @@ const ActionButtons = ({ user }) => {
 
         setTimeout(() => {
             return redirect('/admin/users');
-            // window.location.reload(true);
         }, 3000);
     }
 
@@ -83,7 +82,7 @@ const ActionButtons = ({ user }) => {
                     <IoEyeOutline size={20} color='white' />
                 </button>
 
-                <Link to={`create-user`} state={{ currentUser: user }} className="text-grey-lighter py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
+                <Link to={`/admin/users/create-user`} state={{ currentUser: user }} className="text-grey-lighter py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
 
                 <button onClick={openDeleteModal} data-user-id={user.id} className="text-grey-lighter py-1 px-1 rounded-md bg-red-600 hover:bg-red-700"><MdDeleteOutline size={20} color='white' /></button>
             </div>
@@ -142,7 +141,7 @@ const UsersList = () => {
 
                 <div className="flex justify-between items-center mb-6 w-full">
                     <h1 className="font-bold text-primary text-2xl leading-tight mt-6">Users</h1>
-                    <AddButton navigateTo={`create-user`}>Add New</AddButton>
+                    <AddButton navigateTo={`/admin/users/create-user`}>Add New</AddButton>
                 </div>
             </div>
 

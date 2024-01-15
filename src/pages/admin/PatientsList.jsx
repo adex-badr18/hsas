@@ -78,9 +78,7 @@ const ActionButtons = ({ patient }) => {
         });
 
         setTimeout(() => {
-            navigate('/admin/patients')
-            // return redirect('/admin/users');
-            // window.location.reload(true);
+            navigate('/admin/patients');
         }, 3000);
     }
 
@@ -89,7 +87,7 @@ const ActionButtons = ({ patient }) => {
             <div className="py-2 px-6 flex items-center justify-center gap-1">
                 <button onClick={viewPatient} data-patient-id={patient.id} className='bg-purple-500 hover:bg-purple-600 p-1 rounded-md'><IoEyeOutline size={20} color='white' /></button>
 
-                <Link to={`create-patient`} state={{ currentPatient: patient }} className="text-grey-lighter py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
+                <Link to={`/admin/patients/create-patient`} state={{ currentPatient: patient }} className="text-grey-lighter py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
 
                 <button onClick={openDeleteModal} data-patient-id={patient.id} className="text-grey-lighter py-1 px-1 rounded-md bg-red-600 hover:bg-red-700"><MdDeleteOutline size={20} color='white' /></button>
             </div>
@@ -147,7 +145,7 @@ const PatientsList = () => {
 
                 <div className="flex justify-between items-center mb-6 w-full">
                     <h1 className="font-bold text-primary text-2xl leading-tight mt-6">Patients</h1>
-                    <AddButton navigateTo={`create-patient`}>Add New</AddButton>
+                    <AddButton navigateTo={`/admin/patients/create-patient`}>Add New</AddButton>
                 </div>
             </div>
 

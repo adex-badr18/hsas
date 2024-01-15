@@ -87,7 +87,7 @@ const ActionButtons = ({ scan }) => {
                     <MdOutlineFileDownload size={20} color='white' />
                 </Link>
 
-                <Link to={`create-scan`} state={{ currentScan: scan }} className="py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
+                <Link to={`/user/scans/create-scan`} state={{ currentScan: scan }} className="py-1 px-1 rounded-md bg-blue-600 hover:bg-blue-700"><MdOutlineEdit size={20} color='white' /></Link>
 
                 <button onClick={openDeleteModal} data-scan-id={scan.id} className="py-1 px-1 rounded-md bg-red-600 hover:bg-red-700"><MdDeleteOutline size={20} color='white' /></button>
             </div>
@@ -122,7 +122,6 @@ const ActionButtons = ({ scan }) => {
 const ScansList = () => {
     const navigate = useNavigate();
     const scans = useLoaderData();
-    // console.log(scans);
 
     const columns = [
         { id: 'S/N', header: 'S/N' },
@@ -147,7 +146,7 @@ const ScansList = () => {
 
                 <div className="flex justify-between items-center w-full">
                     <h1 className="font-bold text-primary text-2xl leading-tight mt-6">Scans</h1>
-                    <AddButton navigateTo={`create-scan`}>Add New</AddButton>
+                    <AddButton navigateTo={`/user/scans/create-scan`}>Add New</AddButton>
                 </div>
             </div>
 
